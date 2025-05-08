@@ -43,7 +43,6 @@ jobs:
       uses: golangci/golangci-lint-action@v6
       with:
         version: v1.56.2
-        working-directory: go-web-app-practice/
         args: --verbose --print-issued-lines --print-linter-name 
   
   push:
