@@ -30,18 +30,22 @@ jobs:
     - name: Test
       run: go test ./...
   
-  code-quality:
+   code-quality:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-
+    - name: Set up Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: '1.23'
     - name: Run golangci-lint
       uses: golangci/golangci-lint-action@v6
       with:
         version: v1.56.2
-  
+        working-directory: himmu
+        args: run ./... --verbose --print-issued-lines --print-linter-name --config .golangci.yml
+ 
   push:
     runs-on: ubuntu-latest
 
