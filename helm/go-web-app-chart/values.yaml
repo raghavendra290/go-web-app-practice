@@ -1,0 +1,9 @@
+# values.yaml
+
+replicaCount: 1
+
+image:
+  repository: reddyraghavendra/immu
+  pullPolicy: IfNotPresent
+  tag: "v1"
+
