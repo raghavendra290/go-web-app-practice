@@ -25,8 +25,13 @@ func contactPage(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, "static/contact.html")
 }
 
+func rootHandler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	w.WriteHeader(http.StatusOK)
+	w.Write([]byte("<h1>Welcome to the Home Page</h1>"))
+}
 func main() {
-
+	http.HandleFunc("/", rootHandler)              // ✅ Add this line
 	http.HandleFunc("/home", homePage)
 	http.HandleFunc("/courses", coursePage)
 	http.HandleFunc("/about", aboutPage)
@@ -36,4 +41,5 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 }
