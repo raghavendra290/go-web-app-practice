@@ -44,7 +44,7 @@ jobs:
       with:
         version: v1.56.2
         working-directory: himmu
-        args: run ./... --verbose --print-issued-lines --print-linter-name --config .golangci.yml
+        args: run ./... --verbose --print-issued-lines --print-linter-name 
   
   push:
     runs-on: ubuntu-latest
