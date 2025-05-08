@@ -5,5 +5,5 @@ replicaCount: 1
 image:
   repository: reddyraghavendra/immu
   pullPolicy: IfNotPresent
-  tag: "14913922705"
+  tag: "14915236214"
 
